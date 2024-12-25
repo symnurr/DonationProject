@@ -1,0 +1,31 @@
+
+    /* ero-card design */
+
+        .ero-card1 {
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            margin-bottom: 2rem;
+        }
+
+            .ero-card1-header {
+                padding: 15px;
+                color: white;
+                background: linear-gradient(to right, #ff506f 0%, #ff9bad);
+            }
+
+                .ero-card1-collapse {
+                    float: right;
+                }
+
+            .ero-card1-body {
+                padding: 15px;
+            }
+
+                .ero-card1-text {
+
+                }
+
+                .ero-card1-innerbody {
+                    padding: 5px 15px;
+                }
+
+    /* ero-card design */    

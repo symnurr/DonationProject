@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="../DonationProject/assets/our/account.css">
+    <title>Donation</title>
+</head>
+
+<body>
+
+    <!----------------------- Main Container -------------------------->
+
+    <div class="container d-flex justify-content-center align-items-center min-vh-100">
+
+        <!----------------------- Login Container -------------------------->
+
+        <div class="row border rounded-5 p-3 bg-white shadow box-area">
+
+            <!--------------------------- Left Box ----------------------------->
+
+            <div class="col-md-6 rounded-4 d-flex justify-content-center align-items-center flex-column left-box"
+                style="background: #ff6984;">
+                <div class="featured-image mb-3">
+                    <img src="../DonationProject/assets/our/img/donation_img.jpg" class="img-fluid"
+                        style="width: 100%; height: auto; margin-top: 12px;">
+                </div>
+                <p class="text-white fs-3" style="font-family: 'Courier New', Courier, monospace; font-weight: 600;">
+                    Her bağış bir umut
+                </p>
+                <small class="text-white text-wrap text-center mt-1 mb-2"
+                    style="width: 17rem;font-family: 'Courier New', Courier, monospace;">
+                    Birlikte daha güçlü ve umut dolu bir dünya için
+                </small>
+            </div>
+
+            <!-------------------- ------ Right Box ---------------------------->
+
+            <div class="col-md-6 right-box">
+                <div class="row align-items-center">
+                    <div class="header-text mb-4">
+                        <h2 id="welcomeTitle">Hoşgeldin :)</h2>
+                        <p id="welcomeText">Şimdi hesabına giriş yap</p>
+                    </div>
+
+                    <button class="donor-btn" id="donorBtn">Bağışçı</button>
+                    <button class="inst-btn" id="recipientBtn">Kurum</button>
+
+                    <form action="backend/login_donor.php" method="post" id="loginDonorForm">
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control form-control-lg bg-light fs-6" name="email"
+                                placeholder="Email">
+                        </div>
+                        <div class="input-group mb-1">
+                            <input type="password" class="form-control form-control-lg bg-light fs-6" name="password"
+                                placeholder="Şifre">
+                        </div>
+                        <div class="input-group mb-3">
+                            <button class="btn btn-lg btn-primary w-100 fs-6 mt-5" type="submit" name="islem"
+                                value="login">Giriş yap</button>
+                        </div>
+                    </form>
+
+                    <form action="backend/login_recipient.php" method="post" id="loginRecipientForm">
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control form-control-lg bg-light fs-6" name="email"
+                                placeholder="Email">
+                        </div>
+                        <div class="input-group mb-1">
+                            <input type="password" class="form-control form-control-lg bg-light fs-6" name="password"
+                                placeholder="Şifre">
+                        </div>
+                        <div class="input-group mb-3">
+                            <button class="btn btn-lg btn-primary w-100 fs-6 mt-5" type="submit" name="islem"
+                                value="login">Giriş yap</button>
+                        </div>
+                    </form>
+
+                    <div class="row" id="loginRow">
+                        <small>Bir hesabın yok mu? <strong style="color: red; cursor: pointer;"
+                                id="donorSignupBtn">Bağışçı</strong></small>
+                        <small><strong style="color: red; cursor: pointer;"
+                                id="recipientSignupBtn">Kurum</strong></small>
+                    </div>
+
+                    <form action="backend/donor.php" method="post" id="donorSignupForm">
+                        <div class="input-group mb-1">
+                            <input type="text" class="form-control form-control-lg bg-light fs-6" name="firstname"
+                                placeholder="İsim">
+                        </div>
+                        <div class="input-group mb-1">
+                            <input type="text" class="form-control form-control-lg bg-light fs-6" name="lastname"
+                                placeholder="Soyisim">
+                        </div>
+                        <div class="input-group mb-1">
+                            <input type="date" class="form-control form-control-lg bg-light fs-6" name="birthday"
+                                placeholder="">
+                        </div>
+                        <div class="input-group mb-1">
+                            <input type="text" class="form-control form-control-lg bg-light fs-6" name="jobtitle"
+                                placeholder="Meslek">
+                        </div>
+                        <div class="input-group mb-1">
+                            <input type="text" class="form-control form-control-lg bg-light fs-6" name="institution"
+                                placeholder="Çalıştığın Kurum">
+                        </div>
+                        <div class="input-group mb-1">
+                            <input type="email" class="form-control form-control-lg bg-light fs-6" name="email"
+                                placeholder="Email">
+                        </div>
+                        <div class="input-group mb-1">
+                            <input type="tel" class="form-control form-control-lg bg-light fs-6" name="phone"
+                                placeholder="555-555-55-55">
+                        </div>
+                        <div class="input-group mb-1">
+                            <input type="password" class="form-control form-control-lg bg-light fs-6" name="password"
+                                placeholder="Şifre">
+                        </div>
+                        <div class="input-group mb-2">
+                            <button class="btn btn-lg btn-primary w-100 fs-6 mt-5" type="submit" name="islem"
+                                value="signup">Kayıt ol</button>
+                        </div>
+                    </form>
+
+                    <div class="row" id="donorSignupRow">
+                        <small>Bir hesabın var mı? <strong style="color: red; cursor: pointer;" id="loginPageBtn">Giriş
+                                yap</strong></small>
+                    </div>
+
+                    <form action="backend/recipient.php" method="post" id="recipientSignupForm">
+                        <div class="input-group mb-2">
+                            <input type="text" class="form-control form-control-lg bg-light fs-6" name="institution"
+                                placeholder="Kurum adı">
+                        </div>
+                        <div class="input-group mb-2">
+                            <input type="date" class="form-control form-control-lg bg-light fs-6" name="foundingdate"
+                                placeholder="Kuruluş tarihi">
+                        </div>
+                        <div class="input-group mb-2">
+                            <input type="text" class="form-control form-control-lg bg-light fs-6" name="purpose"
+                                placeholder="Kuruluş amacı">
+                        </div>
+                        <div class="input-group mb-2">
+                            <input type="email" class="form-control form-control-lg bg-light fs-6" name="email"
+                                placeholder="Email">
+                        </div>
+                        <div class="input-group mb-2">
+                            <input type="tel" class="form-control form-control-lg bg-light fs-6" name="phone"
+                                placeholder="555-555-55-55">
+                        </div>
+                        <div class="input-group mb-2">
+                            <input type="password" class="form-control form-control-lg bg-light fs-6" name="password"
+                                placeholder="Şifre">
+                        </div>
+                        <div class="input-group mb-3">
+                            <button class="btn btn-lg btn-primary w-100 fs-6 mt-3" type="submit" name="islem"
+                                value="signup">Kayıt ol</button>
+                        </div>
+                    </form>
+
+                    <div class="row" id="recipientSignupRow">
+                        <small>Bir hesabın var mı? <strong style="color: red; cursor: pointer;"
+                                id="loginPageBtnRec">Giriş yap</strong></small>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        const welcomeTitle = document.querySelector("#welcomeTitle");
+        const welcomeText = document.querySelector("#welcomeText");
+
+        const loginPageBtn = document.querySelector("#loginPageBtn");
+        const loginPageBtnRec = document.querySelector("#loginPageBtnRec");
+        const donorSignupBtn = document.querySelector("#donorSignupBtn");
+        const recipientSignupBtn = document.querySelector("#recipientSignupBtn");
+
+        const donorSignupForm = document.querySelector("#donorSignupForm");
+        const recipientSignupForm = document.querySelector("#recipientSignupForm");
+
+        const donorSignupRow = document.querySelector("#donorSignupRow");
+        const loginRow = document.querySelector("#loginRow");
+        const recipientSignupRow = document.querySelector("#recipientSignupRow");
+
+        const donorBtn = document.querySelector("#donorBtn");
+        const recipientBtn = document.querySelector("#recipientBtn");
+
+        const loginDonorForm = document.querySelector("#loginDonorForm");
+        const loginRecipientForm = document.querySelector("#loginRecipientForm");
+
+        donorBtn.onclick = () => {
+            welcomeTitle.innerText = "Hoşgeldin :)";
+            welcomeText.innerText = "Bağışçı hesabı ile giriş yapabilirsin";
+
+            loginRow.style.display = "block";
+            loginDonorForm.style.display = "block";
+            recipientBtn.style.display = "none";
+            donorBtn.style.display = "none";
+        }
+
+        recipientBtn.onclick = () => {
+            welcomeTitle.innerText = "Hoşgeldin :)";
+            welcomeText.innerText = "Kurum hesabı ile giriş yapabilirsin"
+
+            loginRow.style.display = "block";
+            loginRecipientForm.style.display = "block";
+            recipientBtn.style.display = "none";
+            donorBtn.style.display = "none";
+        }
+
+        loginPageBtn.onclick = () => {
+            welcomeTitle.innerText = "Hoşgeldin :)";
+            welcomeText.innerText = "Bağışçı hesabı ile giriş yapabilirsin"
+
+            donorSignupForm.style.display = "none";
+            donorSignupRow.style.display = "none";
+            recipientSignupForm.style.display = "none";
+            recipientSignupRow.style.display = "none";
+            loginDonorForm.style.display = "block"
+            loginRow.style.display = "block";
+        }
+
+        loginPageBtnRec.onclick = () => {
+            welcomeTitle.innerText = "Hoşgeldin :)";
+            welcomeText.innerText = "Kurum hesabı ile giriş yapabilirsin"
+
+            loginRecipientForm.style.display = "block";
+            loginRow.style.display = "block";
+            donorSignupForm.style.display = "none";
+            donorSignupRow.style.display = "none";
+            recipientSignupForm.style.display = "none";
+            recipientSignupRow.style.display = "none";
+        }
+
+        donorSignupBtn.onclick = () => {
+            welcomeTitle.innerText = "Bir bağışçı hesabı oluştur";
+            welcomeText.innerText = "";
+
+            donorSignupForm.style.display = "block";
+            donorSignupRow.style.display = "block";
+            recipientSignupForm.style.display = "none";
+            recipientSignupRow.style.display = "none";
+            loginDonorForm.style.display = "none";
+            loginRecipientForm.style.display = "none";
+            loginRow.style.display = "none";
+        }
+
+        recipientSignupBtn.onclick = () => {
+            welcomeTitle.innerText = "Bir kurum hesabı oluştur";
+            welcomeText.innerText = "";
+
+            donorSignupForm.style.display = "none";
+            donorSignupRow.style.display = "none";
+            recipientSignupForm.style.display = "block";
+            recipientSignupRow.style.display = "block";
+            loginDonorForm.style.display = "none";
+            loginRecipientForm.style.display = "none";
+            loginRow.style.display = "none";
+        }
+    </script>
+
+</body>
+
+</html>

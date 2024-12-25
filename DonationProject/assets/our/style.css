@@ -1,0 +1,10 @@
+.event-box
+{
+	box-shadow: 3px 3px 10px lightgray;
+}
+
+.event-box:hover 
+{
+	box-shadow: 3px 3px 10px #e6a3af;
+	transition: 0.3s;
+}
